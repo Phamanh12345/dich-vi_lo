@@ -49,12 +49,12 @@ The `model/` folder contains the LoRA adapter and tokenizer files used for Vietn
 ```text
 model/
 │
-├── adapter_config.json
-├── adapter_model.safetensors
-├── added_tokens.json
-├── sentencepiece.bpe.model
-├── tokenizer_config.json
-└── vocab.json
+├── adapter_config.json            Configuration file for the LoRA adapter. It tells PEFT how the adapter was trained and which base model it uses.
+├── adapter_model.safetensors      The trained LoRA weights. This is the most important model file in the folder.
+├── added_tokens.json              Stores extra special tokens added to the tokenizer, if any.
+├── sentencepiece.bpe.model        SentencePiece/BPE tokenizer model used to split text into tokens.
+├── tokenizer_config.json          Configuration file for the tokenizer, including language and tokenization settings.
+└── vocab.json                     Vocabulary file that maps tokens to token IDs.
 ```
 
 ---
