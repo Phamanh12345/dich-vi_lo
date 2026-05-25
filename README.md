@@ -1,56 +1,48 @@
 # Vietnamese → Lao Translation Model
-This project provides a Vietnamese → Lao translation model fine-tuned with LoRA based on facebook/m2m100_418M.
-Fine-tuned Vietnamese to Lao translation model using LoRA on:
 
-```text
-facebook/m2m100_418M
-```
+This project provides a Vietnamese → Lao translation model fine-tuned with LoRA based on `facebook/m2m100_418M`.
 
-Developed by: **Phạm Tuấn Anh**
-
+Developed by: **Phạm Tuấn Anh**  
 GitHub: **Phamanh12345**
 
 ---
 
-# Project Structure
+## Project Structure
 
 ```text
 dich-vi_lo/
 │
-├── model/
-│   ├── adapter_config.json
-│   ├── adapter_model.safetensors
-│   ├── tokenizer_config.json
-│   ├── sentencepiece.bpe.model
-│   └── vocab.json
-│
-├── dataset/
-│   └── vi_lo_dataset_split.zip
-│
-├── translate.py
-├── requirements.txt
-└── README.md
+├── model/              # LoRA adapter and tokenizer files
+├── dataset/            # Processed Vietnamese-Lao dataset
+├── translate.py        # Script for testing translation
+├── requirements.txt    # Required Python libraries
+└── README.md           # Project documentation
 ```
 
 ---
 
-# Features
+## Model Details
 
-- Vietnamese → Lao translation
-- LoRA fine-tuning
-- Based on M2M100 multilingual model
+- Task: Vietnamese → Lao machine translation
+- Base model: `facebook/m2m100_418M`
+- Fine-tuning method: LoRA
+- Framework: PyTorch, Transformers, PEFT
+
+Note: This repository stores a LoRA adapter. The base model will be downloaded automatically when running the script.
 
 ---
 
-# Installation
+## Installation
 
 ```bash
+git clone https://github.com/Phamanh12345/dich-vi_lo.git
+cd dich-vi_lo
 pip install -r requirements.txt
 ```
 
 ---
 
-# Usage
+## Usage
 
 ```bash
 python translate.py
@@ -68,22 +60,27 @@ Output:
 
 ---
 
-# Dataset
+## Dataset
 
-The dataset was processed into:
+The original dataset contains Vietnamese-Lao parallel sentences.  
+Only Vietnamese → Lao sentence pairs were used for fine-tuning.
+
+The dataset was split into:
 
 ```text
-train / validation / test
+train 90% / validation 5% / test 5%
 ```
-
-Only Vietnamese → Lao pairs were used.
 
 ---
 
-GitHub:
+## Author
 
-```text
-https://github.com/Phamanh12345
-```
+**Phạm Tuấn Anh**  
+GitHub: https://github.com/Phamanh12345
 
-Please keep credits when reusing the model or source code.
+---
+
+## Watermark
+
+Model and source code by **Phạm Tuấn Anh**.  
+Please keep credits when reusing this model or source code.
