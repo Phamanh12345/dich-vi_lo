@@ -42,6 +42,23 @@ pip install -r requirements.txt
 
 ---
 
+## Model Folder Explanation
+
+The `model/` folder contains the LoRA adapter and tokenizer files used for Vietnamese → Lao translation.
+
+```text
+model/
+│
+├── adapter_config.json
+├── adapter_model.safetensors
+├── added_tokens.json
+├── sentencepiece.bpe.model
+├── tokenizer_config.json
+└── vocab.json
+```
+
+---
+
 ## Usage
 
 ```bash
