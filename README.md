@@ -1,3 +1,4 @@
+This project provides a Vietnamese → Lao translation model fine-tuned with LoRA based on facebook/m2m100_418M.
 # Vietnamese → Lao Translation Model
 
 Fine-tuned Vietnamese to Lao translation model using LoRA on:
@@ -60,10 +61,10 @@ Example:
 
 ```text
 Input:
-Có người ở phía trước
+Tôi muốn uống nước
 
 Output:
-...
+ຂ້ອຍຕ້ອງການດື່ມນ້ໍາ
 ```
 
 ---
