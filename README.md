@@ -39,10 +39,6 @@ dich-vi_lo/
 - Vietnamese → Lao translation
 - LoRA fine-tuning
 - Based on M2M100 multilingual model
-- Can be integrated into:
-  - YOLO object detection
-  - Text-to-speech systems
-  - Blind assistant systems
 
 ---
 
