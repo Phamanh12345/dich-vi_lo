@@ -1,6 +1,5 @@
-This project provides a Vietnamese → Lao translation model fine-tuned with LoRA based on facebook/m2m100_418M.
 # Vietnamese → Lao Translation Model
-
+This project provides a Vietnamese → Lao translation model fine-tuned with LoRA based on facebook/m2m100_418M.
 Fine-tuned Vietnamese to Lao translation model using LoRA on:
 
 ```text
