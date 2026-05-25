@@ -79,8 +79,3 @@ train 90% / validation 5% / test 5%
 GitHub: https://github.com/Phamanh12345
 
 ---
-
-## Watermark
-
-Model and source code by **Phạm Tuấn Anh**.  
-Please keep credits when reusing this model or source code.
