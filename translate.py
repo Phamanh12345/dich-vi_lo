@@ -1,41 +1,52 @@
-from transformers import M2M100Tokenizer
-from transformers import M2M100ForConditionalGeneration
+from transformers import AutoTokenizer
+from transformers import AutoModelForSeq2SeqLM
 from peft import PeftModel
 
-BASE_MODEL = "facebook/m2m100_418M"
-LORA_PATH = "model"
+base_model_name = "facebook/nllb-200-distilled-600M"
 
-tokenizer = M2M100Tokenizer.from_pretrained(LORA_PATH)
+lora_path = "vi_to_lao_nllb_lora"
 
-base_model = M2M100ForConditionalGeneration.from_pretrained(BASE_MODEL)
+print("Loading tokenizer...")
+tokenizer = AutoTokenizer.from_pretrained(lora_path)
 
+print("Loading base model...")
+base_model = AutoModelForSeq2SeqLM.from_pretrained(base_model_name)
+
+print("Loading LoRA...")
 model = PeftModel.from_pretrained(
     base_model,
-    LORA_PATH
+    lora_path
 )
 
 def translate_vi_to_lao(text):
-    tokenizer.src_lang = "vi"
+    tokenizer.src_lang = "vie_Latn"
 
     encoded = tokenizer(
         text,
         return_tensors="pt"
     )
 
-    output = model.generate(
+    generated_tokens = model.generate(
         **encoded,
-        forced_bos_token_id=tokenizer.get_lang_id("lo"),
-        max_length=96
+        forced_bos_token_id=tokenizer.convert_tokens_to_ids("lao_Laoo"),
+        max_length=128,
+        num_beams=5
     )
 
-    return tokenizer.decode(output[0], skip_special_tokens=True)
+    result = tokenizer.batch_decode(
+        generated_tokens,
+        skip_special_tokens=True
+    )
 
-if __name__ == "__main__":
-    while True:
-        text = input("Nhập tiếng Việt: ")
+    return result[0]
 
-        if text.lower() == "exit":
-            break
+while True:
+    text = input("Nhập tiếng Việt: ")
 
-        result = translate_vi_to_lao(text)
-        print("Tiếng Lào:", result)
+    if text.lower() == "exit":
+        break
+
+    result = translate_vi_to_lao(text)
+
+    print("Tiếng Lào:", result)
+    print()
