@@ -7,3 +7,5 @@ datasets
 sacrebleu
 pandas
 scikit-learn
+safetensors
+evaluate
