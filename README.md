@@ -1,6 +1,6 @@
 # Vietnamese → Lao Translation Model
 
-This project provides a Vietnamese → Lao translation model fine-tuned with LoRA based on `facebook/m2m100_418M`.
+This project provides a Vietnamese → Lao translation model fine-tuned with LoRA based on `facebook/nllb-200-distilled-600M`.
 
 Developed by: **Phạm Tuấn Anh**  
 GitHub: **Phamanh12345**
@@ -24,7 +24,7 @@ dich-vi_lo/
 ## Model Details
 
 - Task: Vietnamese → Lao machine translation
-- Base model: `facebook/m2m100_418M`
+- Base model: `facebook/nllb-200-distilled-600M`
 - Fine-tuning method: LoRA
 - Framework: PyTorch, Transformers, PEFT
 
